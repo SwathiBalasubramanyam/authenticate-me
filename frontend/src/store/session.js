@@ -18,15 +18,19 @@ const removeSessionUser = () => {
 
 export const login = (email, password) => {
     return async(dispatch) => {
-        const res = await csrfFetch('/api/session', {
-            method: "POST",
-            body: JSON.stringify({email: email, password: password}),
-            headers: {
-                'Accept': 'application/json'
-            }
-        })
-        const data = await res.json();
-        dispatch(setSessionUser(data.user));
+        try {
+            const res = await csrfFetch('/api/session', {
+                method: "POST",
+                body: JSON.stringify({email: email, password: password}),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            const data = await res.json();
+            dispatch(setSessionUser(data.user));            
+        } catch (error) {
+            throw error;
+        }
     }
 }
 
