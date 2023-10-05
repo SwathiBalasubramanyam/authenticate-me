@@ -52,4 +52,4 @@ const SignUpFormPage = () => {
     )
 }
 
-export default SignUpFormPage
+export default SignUpFormPage;
