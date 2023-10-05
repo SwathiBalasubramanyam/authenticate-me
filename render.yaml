@@ -2,13 +2,13 @@ databases:
   - name: authenticate-me
     user: authenticate-me
     plan: free
-    region: oregon
+    region: ohio
 
 services:
   - type: web
     name: authenticate-me
     plan: free
-    region: oregon
+    region: ohio
     branch: main
     env: ruby
     buildCommand: "./bin/render-build.sh"
