@@ -1,16 +1,12 @@
 databases:
   - name: authenticate-me
+    databaseName: authenticate-me
     user: authenticate-me
-    plan: free
-    region: ohio
 
 services:
   - type: web
     name: authenticate-me
-    plan: free
-    region: ohio
-    branch: main
-    env: ruby
+    runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "rails s"
     envVars:
